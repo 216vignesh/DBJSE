@@ -1,0 +1,41 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>
+                <b>Paper Name</b>
+            </td>
+            <td>
+                <b>Paper Author</b>
+            </td>
+            <td colspan="2">
+                <b>Action</b>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(var i=0; i < papers.length; i++) { %>
+            <tr>
+                <td>
+                    <%= papers[i].paper_name %>
+                </td>
+                <td>
+                    <%= papers[i].paper_author %>
+                </td>
+            </tr>
+            <% }  %>
+    </tbody>
+</table>
+ <br><br><br>
+
+
+</body>
+
+</html>

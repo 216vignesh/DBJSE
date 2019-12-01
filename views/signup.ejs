@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ../public/partials/head %>
+</head>
+
+<body>
+  <header>
+    <% include ../public/js/header %>
+  </header>
+
+  <main>
+    <div class="showcase container">
+
+      <br><br><br>
+      <!-- <a href="/author/asignup" class="btn btn-large cyan darken-3 white-text">Sign Up as Author</a>
+        <a href="/reviewer/rsignup" class="btn btn-large cyan darken-3 white-text">Sign Up as Reviewer</a>-->
+
+      <div class="carousel carousel-slider center">
+
+        <div class="carousel-item white-text" href="/author/asignup">
+          <h2>Author Registration</h2>
+          <p class="white-text">This is your first panel</p>
+          <div class="carousel-fixed-item center">
+            <a class="btn waves-effect cyan darken-3 text-white" href="/author/asignup">Sign Up for Author</a>
+          </div>
+          <div class="carousel-image">
+            <img src="/writer.jpg" alt="author" type="image">
+          </div>
+        </div>
+
+        <div class="carousel-item white-text" href="/reviewer/rsignup">
+          <h2>Reviewer Registration</h2>
+          <p class="white-text">This is your second panel</p>
+          <div class="carousel-fixed-item center">
+            <a class="btn waves-effect cyan darken-3 text-white" href="/reviewer/rsignup/">Sign Up for Reviewer</a>
+          </div>
+          <div class="carousel-image">
+            <img src="/reviewer.jpg" alt="reviewer" type="image">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <% include ../public/partials/footer %>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.carousel.carousel-slider').carousel({
+        fullWidth: true
+      });
+      $('.button-collapse').sideNav();
+      $('.modal').modal();
+    });
+    $(".dropdown-trigger").dropdown();
+
+    $('.carousel.carousel-slider').carousel({
+      fullWidth: true,
+      indicators: true
+    });
+  </script>
+
+</body>
+
+</html>

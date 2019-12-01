@@ -1,0 +1,73 @@
+<!-- <html>
+    <head>
+
+    </head>
+
+    <body>
+        <h1>Author successfully logged in</h1>
+
+        Hello <%= author.name %>
+
+
+        <a href= "/logout"> Logout</a>
+        <br><br>
+        <a href="/author/papers"><button>Papers Uploaded</button></a>
+
+    </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <% include ../../public/partials/head %>
+</head>
+
+<body>
+
+  <header class="main-header">
+    <% include ../../public/js/header %>
+      <div class="showcase container">
+        <div class="row">
+          <h4 class="col align-center" id="heading">Hello <%= author.name %></h4>
+        </div>
+
+
+
+
+        <a href= "/logout" class="waves-effect waves-light btn"> Logout</a>
+        <br><br>
+        <a href="/author/papers" class="waves-effect waves-light btn">Papers Uploaded</a>
+
+
+  </div>
+
+        <footer>
+          <% include ../../public/partials/footer %>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        <script>
+          $(document).ready(function() {
+            $('.carousel.carousel-slider').carousel({
+              fullWidth: true
+            });
+            $('.button-collapse').sideNav();
+            $('.modal').modal();
+            $('select').formSelect();
+          });
+
+          $(document).ready(function() {
+            $('.carousel.carousel-slider').carousel({
+              fullWidth: true
+            });
+            $('.button-collapse').sideNav();
+            $('.modal').modal();
+          });
+          $(".dropdown-trigger").dropdown();
+        </script>
+</body>
+
+</html>

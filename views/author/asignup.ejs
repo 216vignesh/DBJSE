@@ -1,0 +1,266 @@
+<!-- <html>
+    <head>
+
+    </head>
+
+    <body>
+
+        <h1>Author Signup</h1>
+
+        <% if (message.length > 0) { %>
+        <b>
+            <%= message %>
+        </b>
+        <% } %>
+
+
+        <form action="/author/asignup" method="post">
+
+            <label>Fname</label>
+            <input type="text" name="fname" required>
+            <br>
+
+            <label>Mname</label>
+            <input type="text" name="mname" required>
+            <br>
+
+            <label>Lname</label>
+            <input type="text" name="lname" required>
+            <br>
+
+
+
+            Gender:
+
+            <label>M</label>
+            <input type= "radio" name= "gender" value= "M" required>
+
+            <label>F</label>
+            <input type= "radio" name= "gender" value= "F">
+            <br>
+
+            <div class="input-phone">
+            <label>Mobile Number</label>
+            <input type="text" name="country_code" required> &emsp;
+            <input type="text" name="mobile" required>
+            </div>
+            <br>
+
+            <label>Organization Name</label>
+            <input type="text" name="orgname" required>
+            <br>
+
+            <label>Organization Address</label>
+            <input type="text" name="orgadd" required>
+            <br>
+
+            <label>Email ID</label>
+            <input type="email" name="email" required>
+            <br>
+
+            <label>Password</label>
+            <input type="password" name="password" required>
+            <br>
+
+            <button type="submit">Signup</button>
+
+        </form>
+
+    </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <% include ../../public/partials/head %>
+</head>
+
+<body>
+  <header>
+    <% include ../../public/js/header %>
+  </header>
+  <main>
+  <div class="col s12 m6 container">
+    <div class="header">
+      <h4>Registration Form</h4>
+      <p>Please fill the credentials</p>
+    </div>
+    <div class="card-panel grey lighten-4 grey-text text-darken-4 z-depth-0">
+      <form action="/author/asignup" method="post">
+        <div class="row">
+          <div class="col s12">
+            <!----------------------------------->
+            <div class="input-field">
+              <input type="text" id="first_name" name="fname">
+              <label for="first_name">First Name</label>
+            </div>
+            <!----------------------------------->
+            <div class="input-field">
+              <input type="text" id="middle_name" name="mname">
+              <label for="middle_name">Middle Name</label>
+            </div>
+            <!----------------------------------->
+            <div class="input-field">
+              <input type="text" id="last_name" name="lname">
+              <label for="last_name">Last Name</label>
+            </div>
+            <!----------------------------------->
+            <div class="input-field">
+              <p>
+                <label>
+                <input class="with-gap" name="gender" type="radio" value= "M" unchecked />
+                <span>Male</span>
+            </label>
+              </p>
+              <p>
+                <label>
+                <input class="with-gap" name="gender" type="radio" value= "F" unchecked />
+                <span>Female</span>
+            </label>
+              </p>
+            </div>
+            <!----------------------------------->
+            <div class="input-phone">
+              <label for="country_code">Mobile Number</label>
+              <input type="text-box" id="mob" name="country_code" required> &emsp;
+              <input type="text-box" id="cc" name="mobile" required>
+              </div>
+              <br>
+            <div class="input-field">
+              <input type="email" id="email" name="email">
+              <label for="email">Email</label>
+            </div>
+            <!----------------------------------->
+            <div class="input-field">
+              <input type="password" id="password" name="password">
+              <label for="password">Password</label>
+            </div>
+            <!----------------------------------->
+            <div class="input-field">
+              <input type="password" id="cpassword">
+              <label for="password">Confirm Password</label>
+            </div>
+            <!-- <div class="input-field">
+          <input type="text" id="company">
+          <label for="company">Company</label>
+        </div> -->
+            <!---------ROLE PART(some doubts)-------------------------->
+            <div class="input-field">
+              <select id="role">
+           <option value="" disabled selected>Select Role</option>
+           <option value="author">Author</option>
+           <option value="reviewer">Reviewer</option>
+           <option value="other">Other</option>
+         </select>
+              <!-- <label for="role">Role</label> -->
+            </div>
+            <!----------------------------------->
+            <fieldset>
+              <legend class="the-legend">Organizational Details</legend>
+              <div class="input-field my-2">
+                <input type="text" name="orgname" placeholder="Enter Organization's Name">
+                <textarea name="orgadd" rows="3" placeholder="Enter Organization's Address"></textarea>
+              </div>
+            </fieldset>
+            <!----------------------------------->
+            <div class="input-field">
+              <p>
+                <label>
+              <input class="filled-in" id="cond1" name="agree" type="checkbox"/>
+               <span>I agree to the terms and conditions</span>
+            </label>
+              </p>
+              <p>
+                <label>
+              <input class="filled-in" name="newsletter" type="checkbox"/>
+               <span>  I would like to receive newsletter</span>
+            </label>
+              </p>
+            </div>
+            <!--------------------------------->
+
+            <br><br>
+
+            <input type="submit" id="submit" value="Submit" class="btn white black-text" onclick="return Validate()">
+            <input type="close" value="CLose" class="btn red darken-3 white-text">
+      </form>
+      </div>
+      </div>
+    </div>
+  </div>
+  </main>
+
+  <footer>
+    <% include ../../public/partials/footer %>
+  </footer>
+
+  <!--IMPORTANT always import jquery before materialize css-->
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+  <script type="text/javascript">
+
+      function Validate() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("cpassword").value;
+        if (password != confirmPassword) {
+          alert("Passwords do not match.");
+          return false;
+        }
+        return true;
+      }
+
+  </script>
+
+
+  <script>
+
+    (function($) {
+    $.fn.inputFilter = function(inputFilter) {
+      return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function() {
+        if (inputFilter(this.value)) {
+          this.oldValue = this.value;
+          this.oldSelectionStart = this.selectionStart;
+          this.oldSelectionEnd = this.selectionEnd;
+        } else if (this.hasOwnProperty("oldValue")) {
+          this.value = this.oldValue;
+          this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+        }
+      });
+    };
+  }(jQuery));
+
+  $("#mob").inputFilter(function(value) {
+    return /^\d*$/.test(value) && (value === "" || parseInt(value) <= 9999999999); });
+
+  $("#cc").inputFilter(function(value) {
+    return /^\d*$/.test(value) && (value === "" || parseInt(value) <= 99); });
+
+    $('#cond1').change(function () {
+        $('#submit').prop("disabled", !this.checked);
+    }).change()
+
+    $(document).ready(function() {
+      $('.carousel.carousel-slider').carousel({
+        fullWidth: true
+      });
+      $('.button-collapse').sideNav();
+      $('.modal').modal();
+      $('select').formSelect();
+    });
+
+    $(document).ready(function() {
+      $('.carousel.carousel-slider').carousel({
+        fullWidth: true
+      });
+      $('.button-collapse').sideNav();
+      $('.modal').modal();
+    });
+    $(".dropdown-trigger").dropdown();
+  </script>
+</body>
+
+</html>

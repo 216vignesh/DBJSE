@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+     <% include ../public/partials/head %>
+  </head>
+
+  <body>
+    <header>
+      <% include ../public/js/header %>
+    </header>
+
+    <main>
+    <div class="showcase container">
+      <h3 class="align-center" id="heading">Get in Touch</h3>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <input type="text" class="validate">
+              <i class="material-icons prefix">person</i>
+              <label for="title">Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="keyword" type="text" class="validate">
+              <i class="material-icons prefix">email</i>
+              <label for="keyword">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea id="message" class="materialize-textarea"></textarea>
+              <i class="material-icons prefix">message</i>
+              <label for="message">Message</label>
+            </div>
+          </div>
+        </form>
+        </div>
+      </div>
+      </main>
+
+    <footer>
+      <% include ../public/partials/footer %>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.carousel.carousel-slider').carousel({
+          fullWidth: true
+        });
+        $('.button-collapse').sideNav();
+        $('.modal').modal();
+      });
+      $(".dropdown-trigger").dropdown();
+    </script>
+
+</body>
+
+</html>

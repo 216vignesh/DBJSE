@@ -1,0 +1,172 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>EJS Engine</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+  </head>
+  <body>
+    <br><br>
+    <div class="container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <td><b>Paper Name</b></td>
+            <td><b>Author Name</b></td>
+            <td><b>Keywords</b></td>
+            <td><b>Assigned to</b></td>
+            <td><b>Download</b></td>
+            <td colspan="2"><b>Action</b></td>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var i=0; i < paprs.length; i++) { %>
+            <% if(paprs[i].paper_author_id == authorid.id) { %>
+          <tr>
+            <td><%= paprs[i].paper_title %></td>
+            <td><%= paprs[i].paper_author %></td>
+            <td><%= paprs[i].paper_keywords %></td>
+            <td><%= paprs[i].assignedTo %></td>
+
+            <td><a href="../uploads/<%= paprs[i].paper_id %>.pdf">View</a></td>
+
+
+
+            <td><a href="/author/papers/edit/<%= paprs[i]._id %>" class="btn btn-primary">Edit</a></td>
+            <td><a href="/author/papers/delete/<%= paprs[i]._id %>" class="btn btn-danger">Delete</a></td>
+          </tr>
+            <% } %>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+    <br><br>
+    <center><a href="/author/papers/add"><button class="btn btn-default btn-lg">Add A New Paper</button></a></center>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <% include ../../public/partials/head %>
+</head>
+
+<body>
+
+  <header class="main-header">
+    <!-- <% include ../../public/js/header %> -->
+
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="/mypaper">My Papers</a></li>
+        <li><a href="/reviewp">Review Papers</a></li>
+        <li><a href="/uploadp">Upload</a></li>
+        <li><a href="#!">Settings</a></li>
+        <li class="divider"></li>
+        <li><a href="/">Log Out</a></li>
+      </ul>
+      <nav>
+          <div class="nav-wrapper cyan darken-3">
+            <a href="/" class="brand-logo">DBITtech</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/contact">Contact</a></li>
+              <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Profile<i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+          </div>
+      </nav>
+
+
+      <div class="showcase container">
+        <div class="row">
+          <h4 class="col left-align" id="heading">My Papers</h4><br>
+          <a href="/author/papers/add" ><button class="btn btn-default btn-lg right-align">Add A New Paper</button></a>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" class="validate">
+            <i class="material-icons prefix">search</i>
+            <label for="search">Search Paper</label>
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Sequence No.</th>
+              <th>Paper Name</th>
+              <th>Author Name</th>
+              <th>Keywords</th>
+              <th>Assigned To</th>
+              <th cool>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+              <% for(var i=0; i < paprs.length; i++) { %>
+                <% if(paprs[i].paper_author_id == authorid.id) { %>
+              <tr>
+                <td><%= i+1 %></td>
+                <td><%= paprs[i].paper_title %></td>
+                <td><%= paprs[i].paper_author %></td>
+                <td><%= paprs[i].paper_keywords %></td>
+                <td><%= paprs[i].assignedTo %></td>
+
+                <td><a href="/uploads/<%= paprs[i]._id %>.pdf" class="btn btn-primary">View</a></td>
+                <td><a href="/author/papers/edit/<%= paprs[i]._id %>" class="btn btn-primary">Edit</a></td>
+                <td><a href="/author/papers/delete/<%= paprs[i]._id %>" class="btn red">Delete</a></td>
+
+
+                <% } %>
+              <% } %>
+
+              <!-- <td>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Edit
+              <button class="btn red lighten-1 waves-effect waves-light" type="submit" name="action">Delete
+              <button class="btn waves-effect waves-light" type="submit" name="action">View
+             </td>  -->
+
+        </tr>
+      </tbody>
+    </table>
+
+
+
+    <!-- <div class="row">
+      <div class="col s6 offset-s6">
+        <ul class="pagination">
+          <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+          <li class="active"><a href="#!">1</a></li>
+          <li class="waves-effect"><a href="#!">2</a></li>
+          <li class="waves-effect"><a href="#!">3</a></li>
+          <li class="waves-effect"><a href="#!">4</a></li>
+          <li class="waves-effect"><a href="#!">5</a></li>
+          <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+    <div> -->
+
+
+    </div>
+  </div>
+
+        <footer>
+          <% include ../../public/partials/footer %>
+        </footer>
+
+         <!--IMPORTANT always import jquery before materialize css-->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.carousel.carousel-slider').carousel({
+        fullWidth: true
+      });
+      $('.button-collapse').sideNav();
+      $('.modal').modal();
+    });
+    $(".dropdown-trigger").dropdown();
+  </script>
+</body>
+
+</html>

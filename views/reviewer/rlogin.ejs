@@ -1,0 +1,100 @@
+<!-- <html>
+    <head>
+
+    </head>
+
+    <body>
+        <h1>Reviewer Login</h1>
+
+        <% if (message.length > 0) { %>
+            <b> <%= message %> </b>     
+        <% } %>
+
+
+        <form action= "/reviewer/rlogin" method= "post">
+            
+            <label>Email</label>
+            <input type="text" name="email" required> 
+
+            <label>Password</label>
+            <input type="password" name="password" required>
+
+            <button type= "submit">Login</button>
+
+        </form>
+
+
+    </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <% include ../../public/partials/head %>
+</head>
+
+<body class="container">
+
+  <header class="main-header">
+    <% include ../../public/js/header %>
+      <div class="showcase container">
+        <div class="row">
+          <h4 class="col align-center" id="heading">Reviewer Login </h4>
+        </div>
+        
+        <% if (message.length > 0) { %>
+            <b> <%= message %> </b>     
+        <% } %>
+
+
+        <form action= "/reviewer/rlogin" method= "post">
+            
+            <!-- <label style="font-size: larger;">Email</label>
+            <input type="text" name="email" required>  -->
+
+            <div class="input-field">
+              <input type="email" name="email" id="email">
+              <label for="email">Email</label>
+            </div>
+
+            <div class="input-field">
+              <input type="password" name="password" id="password">
+              <label for="password">Password</label>
+            </div>
+
+
+            <button class="waves-effect waves-light btn" type= "submit">Login</button>
+
+        </form>
+       
+
+  </div>
+
+        <footer>
+          <% include ../../public/partials/footer %>
+        </footer>
+
+        <!--IMPORTANT always import jquery before materialize css-->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.carousel.carousel-slider').carousel({ fullWidth: true });
+      $('.button-collapse').sideNav();
+      $('.modal').modal();
+    });
+
+    $(document).ready(function() {
+      $('.carousel.carousel-slider').carousel({
+        fullWidth: true
+      });
+      $('.button-collapse').sideNav();
+      $('.modal').modal();
+    });
+    $(".dropdown-trigger").dropdown();
+  </script>    
+</body>
+
+</html>

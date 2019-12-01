@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <% include C:\college\DBJSE\public\partials\head %> 
+</head>
+
+<body>
+  <header>
+    <% include ../public/js/header %>
+  </header>
+
+  <main>
+  <section class="section section-solutions-about">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m5">
+          <h2>What We Do...</h2>
+          <p>Through this website, we tend to maintain a portal that would help to work with papers on easier basis. Not only this website would store the research papers, but will also help to edit and review the papers.</p>
+        </div>
+        <div class="col s12 m6 offset-m1">
+          <div class="row">
+            <div class="col s12">
+              <ul class="tabs">
+                <li class="tab col s4">
+                  <a href="#tab1" class="cyan-text">Background</a>
+                </li>
+                <li class="tab col s4">
+                  <a href="#tab2" class="cyan-text">Initiative</a>
+                </li>
+                <li class="tab col s4">
+                  <a href="#tab3" class="cyan-text">Team Members</a>
+                </li>
+              </ul>
+            </div>
+            <div id="tab1" class="col s12">
+              <h5>Background</h5>
+              <p>Like IEEE's official website, this portal will act a sort of its subset for DBIT's research purposes.</p>
+            </div>
+            <div id="tab2" class="col s12">
+              <h5>Initiative</h5>
+              <p>The project was started under the guidance of Dr. Amiya Tripath Sir and has been implemented by the DBJSE students group 2018.</p>
+            </div>
+            <div id="tab3" class="col s12">
+              <h5>Team Members</h5>
+              <ul class="collection">
+                 <li class="collection-item avatar">
+                   <img src="aarish.jpg" alt="aarish" class="circle">
+                   <span class="title">Aarish Iyer</span>
+                   <p>Backend-Developer</p>
+                 </li>
+                 <li class="collection-item avatar">
+                   <img src="yash.jpg" alt="yash" class="circle">
+                   <span class="title">Yash Mahajan</span>
+                   <p>Backend-Developer</p>
+                 </li>
+                 <li class="collection-item avatar">
+                   <img src="amrit.jpg" alt="amrit" class="circle">
+                   <span class="title">Haramrit Khurana</span>
+                   <p>Backend-Developer</p>
+                 </li>
+                 <li class="collection-item avatar">
+                   <img src="nihit.jpg" alt="nihit" class="circle">
+                   <span class="title">Nihit Natu</span>
+                   <p>Backend-Developer</p>
+                 </li>
+                 <li class="collection-item avatar">
+                   <img src="" alt="vaibhav" class="circle">
+                   <span class="title">Vaibhav Patil</span>
+                   <p>Backend-Developer</p>
+                 </li>
+                 <li class="collection-item avatar">
+                   <img src="milbir.jpg" alt="milbir" class="circle">
+                   <span class="title">Milbir Guram</span>
+                   <p>Frontend-Developer</p>
+                 </li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-features grey lighten-3">
+    <div class="container">
+      <h4 class="cyan-text text-darken-3 center">Features & Merits</h4>
+      <h6 class="grey-text text-darken-2 center">These are the collated advantages of this project explained briefly - </h6>
+      <br>
+      <br>
+      <!-- Row 1 -->
+      <div class="row">
+        <div class="col s12 m4">
+          <h5>
+            <i class="fa fa-user"></i> User Oriented
+          </h5>
+          <p>The interface of the website has been plain and simple, this helps to avoid the confusion while navigating through the website. It helps the user to understand the process in easier manner.</p>
+        </div>
+        <div class="col s12 m4">
+          <h5>
+            <i class="fa fa-database"></i> Smart Storage
+          </h5>
+          <p>Effort has been made that the storage and the way it is done is based on the recent technologies. We have used MongoDB for its pellucid interface instead of the usual DB storage preferences.</p>
+        </div>
+        <div class="col s12 m4">
+          <h5>
+            <i class="fa fa-chart-line"></i> Paper Reviewal
+          </h5>
+          <p>Researchers who have published their work or wants to keep check on other papers for studying or any other purposes, this features allows them to do it in an easier manner.</p>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="row">
+        <div class="col s12 m4">
+          <h5>
+            <i class="fa fa-github"></i> Administration
+          </h5>
+          <p>The administrative work concerned with the published papers is of utmost importance, the primary motive is to keep everything ordered and monitored.</p>
+        </div>
+        <div class="col s12 m4">
+          <h5>
+            <i class="fa fa-plus"></i> Paper Addition
+          </h5>
+          <p>All the research work that has been done and the subsequent papers published along with it could be saved and referenced later.</p>
+        </div>
+        <div class="col s12 m4">
+          <h5>
+            <i class="fa fa-hdd"></i> Cloud Based
+          </h5>
+          <p>Instead of finding the papers manually or even storing them in the hard disk storage is not a convenient idea. The website helps to keep all the research papers neatly placed at one place.</p>
+        </div>
+      </div>
+      <div class="center">
+        <a href="/signup" class="btn btn-large grey">Sign Up Now</a>
+        <br>
+        <br>
+        <h5>
+          <span class="deep-cyan-text text-lighten-1">Have a question? </span><a href="/contact">Contact our Team</a>
+        </h5>
+
+      </div>
+    </div>
+  </section>
+  </main>
+
+
+
+
+
+
+
+
+
+  <footer>
+    <% include ../public/partials/footer %>
+  </footer>
+
+  <!--IMPORTANT always import jquery before materialize css-->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.carousel.carousel-slider').carousel({
+        fullWidth: true
+      });
+      $('.button-collapse').sideNav();
+      $('.modal').modal();
+    });
+
+    $(document).ready(function() {
+      $('.carousel.carousel-slider').carousel({
+        fullWidth: true
+      });
+      $('.button-collapse').sideNav();
+      $('.modal').modal();
+    });
+    $(".dropdown-trigger").dropdown();
+  </script>
+</body>
+
+</html>

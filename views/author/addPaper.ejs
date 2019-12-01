@@ -1,0 +1,126 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Paper Upload</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+        <form method="post" action="/author/papers/add/post">
+          <center><h1>Paper Upload</h1></center>
+          <div class="form-group">
+            <label for="paper_title">Paper Title</label>
+            <input type="text" class="form-control" id="paper_title" name="paper_title"><br>
+
+            <label for="paper_author">Author</label>
+            <input type="text" class="form-control" id="paper_author" name="paper_author"><br>
+
+            <label for="paper_abstract">Abstract</label>
+            <textarea class="form-control" id="paper_abstract" name="paper_abstract"></textarea><br>
+
+             <label for="paper_keywords">Keywords</label>
+            <input type="text" class="form-control" id="paper_keywords" name="paper_keywords"><br>
+
+            <label>Keywords</label><br>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="keywords" value="AI">Artificial Intelligence
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="keywords" value="IP">Image Processing
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="keywords" value="MI">Machine Learning
+            </label>
+
+          </div>
+          <button type="submit" class="btn btn-default">Add</button>
+        </form>
+    </div>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <% include ../../public/partials/head %>
+</head>
+
+<body>
+
+  <header class="main-header">
+    <% include ../../public/js/header %>
+      <div class="showcase container">
+        <div class="row">
+          <h4 class="col align-center" id="heading">Add A New Paper</h4>
+        </div>
+
+
+            <form method="post" action="/author/papers/add/post">
+              <div class="form-group">
+                  <label style="font-size: larger;" for="paper_title">Paper Title</label>
+                  <input type="text" id="paper_title" name="paper_title"><br>
+
+                <label style="font-size: larger;" for="paper_author">Author</label>
+                <input type="text" class="form-control" id="paper_author" name="paper_author"><br>
+
+                <label style="font-size: larger;" for="paper_abstract">Abstract</label>
+                <textarea class="materialize-textarea" id="paper_abstract" name="paper_abstract"></textarea><br>
+
+                <label style="font-size: larger;">Keywords</label><br>
+              <p>
+                <label >
+                  <input type="checkbox" class="filled-in" name="keywords" value="AI">
+                  <span> Artificial Intelligence</span>
+                </label>
+              </p>
+              <p>
+                <label >
+                  <input type="checkbox" class="filled-in" name="keywords" value="IP">
+                  <span>Image Processing</span>
+                </label>
+              </p>
+              <p>
+                <label >
+                  <input type="checkbox" class="filled-in" name="keywords" value="MI">
+                  <span>Machine Learning</span>
+                </label>
+              </p>
+              </div>
+              <button type="submit" class="btn btn-default">Add</button>
+            </form>
+
+
+
+
+
+  </div>
+
+        <footer>
+          <% include ../../public/partials/footer %>
+        </footer>
+
+        <script>
+          $(document).ready(function() {
+            $('.carousel.carousel-slider').carousel({
+              fullWidth: true
+            });
+            $('.button-collapse').sideNav();
+            $('.modal').modal();
+            $('select').formSelect();
+          });
+
+          $(document).ready(function() {
+            $('.carousel.carousel-slider').carousel({
+              fullWidth: true
+            });
+            $('.button-collapse').sideNav();
+            $('.modal').modal();
+          });
+          $(".dropdown-trigger").dropdown();
+        </script>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Paper Upload</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+        <form method="post" action="/author/papers/upload/<%= id %>" enctype="multipart/form-data">
+          <center><h1>Choose File To Upload</h1></center>
+          <div class="form-group">
+
+            <br>
+            <label>Upload File</label>
+            <input type="file" name='upload' multiple><br>
+
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+  </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <% include ../../public/partials/head %>
+
+
+  </head>
+
+<body>
+
+  <header class="main-header">
+    <% include ../../public/js/header %>
+      <div class="showcase container">
+        <div class="row">
+          <h4 class="col align-center" id="heading">Choose file to upload</h4>
+        </div>
+
+
+        <form method="post" action="/author/papers/upload/<%= id %>" enctype="multipart/form-data">
+          <div class="form-group">
+
+            <br>
+            <label style="font-size: larger;">Upload File</label>
+            <input type="file" name='upload' multiple><br>
+
+          </div><br>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+
+
+
+
+
+  </div>
+
+        <footer>
+          <% include ../../public/partials/footer %>
+        </footer>
+
+        <script>
+          $(document).ready(function() {
+            $('.carousel.carousel-slider').carousel({
+              fullWidth: true
+            });
+            $('.button-collapse').sideNav();
+            $('.modal').modal();
+            $('select').formSelect();
+          });
+
+          $(document).ready(function() {
+            $('.carousel.carousel-slider').carousel({
+              fullWidth: true
+            });
+            $('.button-collapse').sideNav();
+            $('.modal').modal();
+          });
+          $(".dropdown-trigger").dropdown();
+        </script>
+</body>
+
+</html>

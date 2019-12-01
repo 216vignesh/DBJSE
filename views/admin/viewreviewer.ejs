@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <% include ../../public/partials/head %>
+</head>
+
+<body>
+<div id="container" style="min-height:100%; position:relative;">
+    <%- include('adminnav'); -%> 
+    
+<h2>Active Users</h2>
+<table>
+    <thead>
+        <tr>
+            <td>
+                <b>Reviewer Name</b>
+            </td>
+            <td>
+                <b>Reviewer Email ID</b>
+            </td>
+            <td colspan="2">
+                <b>Action</b>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(var i=0; i < rev.length; i++) { if(rev[i].local.blockedStatus === '0') { %>
+            <tr>
+                <td>
+                    <%= rev[i].local.name %>
+                </td>
+                <td>
+                    <%= rev[i].local.email %>
+                </td>
+                <td>
+                    <a href=/admin/editreviewer/<%= rev[i]._id %>>Edit</a>
+                </td>
+                <td>
+                    <a href=/admin/blockreviewer/<%= rev[i]._id %>>Block</a>
+                </td>
+                <td>
+                    <a href=/admin/deletereviewer/<%= rev[i]._id %>>Delete</a>
+                </td>
+            </tr>
+            <% } } %>
+    </tbody>
+</table>
+
+<h2>Blocked Users</h2>
+<table>
+    <thead>
+        <tr>
+            <td>
+                <b>Reviewer Name</b>
+            </td>
+            <td>
+                <b>Reviewer Email ID</b>
+            </td>
+            <td colspan="2">
+                <b>Action</b>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(var i=0; i < rev.length; i++) { if(rev[i].local.blockedStatus === '1') { %>
+            <tr>
+                <td>
+                    <%= rev[i].local.name %>
+                </td>
+                <td>
+                    <%= rev[i].local.email %>
+                </td>
+                <td>
+                    <a href=/admin/editreviewer/<%= rev[i]._id %>>Edit</a>
+                </td>
+                <td>
+                    <a href=/admin/unblockreviewer/<%= rev[i]._id %>>Unblock</a>
+                </td>
+                <td>
+                    <a href=/admin/deletereviewer/<%= rev[i]._id %>>Delete</a>
+                </td>
+            </tr>
+            <% } } %>
+    </tbody>
+</table>
+
+<footer>
+    <% include ../../public/partials/footer %>
+</footer>
+</div>
+
+</body>
+
+</html>

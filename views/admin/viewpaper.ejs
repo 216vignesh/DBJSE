@@ -1,0 +1,81 @@
+<html>
+
+<head>
+  <% include ../../public/partials/head %>
+</head>
+
+<body>
+    
+    <%- include('adminnav'); -%>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Paper Name</th>
+                <th>Author Name</th>
+                <th>Keywords</th>
+                <th>Assigned To</th>
+                <th cool>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <% for(var i=0; i < paprs.length; i++) { %>
+            <tr>
+                <td>
+                    <%= paprs[i].paper_title %>
+                </td>
+                <td>
+                    <%= paprs[i].paper_author %>
+                </td>
+                <td>
+                    <%= paprs[i].paper_keywords %>
+                </td>
+                <td>
+                    <%= paprs[i].assignedTo %>
+                </td>
+
+                <td><a href="/uploads/<%= paprs[i]._id %>.pdf" class="btn btn-primary">View</a></td>
+                <td><a href="/author/papers/edit/<%= paprs[i]._id %>" class="btn btn-primary">Edit</a></td>
+                <td><a href="/author/papers/delete/<%= paprs[i]._id %>" class="btn red">Delete</a></td>
+
+                <% } %>
+
+
+                <!-- <td>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Edit
+              <button class="btn red lighten-1 waves-effect waves-light" type="submit" name="action">Delete
+              <button class="btn waves-effect waves-light" type="submit" name="action">View
+             </td>  -->
+
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <!-- <div class="row">
+      <div class="col s6 offset-s6">
+        <ul class="pagination">
+          <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+          <li class="active"><a href="#!">1</a></li>
+          <li class="waves-effect"><a href="#!">2</a></li>
+          <li class="waves-effect"><a href="#!">3</a></li>
+          <li class="waves-effect"><a href="#!">4</a></li>
+          <li class="waves-effect"><a href="#!">5</a></li>
+          <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+    <div> -->
+
+
+</div>
+</div>
+
+<footer>
+    <% include ../../public/partials/footer %>
+</footer>
+
+</body>
+
+</html>

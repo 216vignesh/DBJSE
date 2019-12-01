@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Assigned Papers</title>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+    </head>
+    
+    <body>
+        <br><br>
+        <div class="container">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <td><b>Paper Name</b></td>
+                    <td><b>Author Name</b></td>
+                    <td><b>Keywords</b></td>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i=0; i < paprs.length; i++) { %>
+                <% if(paprs[i].assignedTo == rev._id) { %>
+                <tr>
+                    <td>
+                        <%= paprs[i].paper_title %>
+                    </td>
+                    <td>
+                        <%= paprs[i].paper_author %>
+                    </td>
+                    <td>
+                        <%= paprs[i].paper_keywords %>
+                    </td>
+                </tr>
+                <% } %>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+    <br><br>
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body class="container">
+
+  <header class="main-header">
+    <% include ../partials/header %>
+      <div class="showcase container">
+        <h3 class="align-center" id="heading">Upload Paper</h3>
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <input type="text" class="validate">
+                <label for="title">Title</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="keyword" type="text" class="validate">
+                <label for="keyword">Keyword</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="textarea1">Abstract</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12">
+                Please specify your institute email ID:
+                <div class="input-field inline">
+                  <input id="email_inline" type="email" class="validate">
+                  <label for="email_inline">Email</label>
+                  <span class="helper-text" data-error="wrong" data-success="right">Hint: Should end with dbit.in</span>
+                </div>
+              </div>
+            </div>
+            <!----------------------->
+            <form action='#'>
+              <div class="row">
+                <div class="col s12">
+                  Choose your department -
+                  <p>
+                    <label>
+                 <input name="comps" type="radio"/>
+                 <span>Computer Engineering and Department</span>
+                </label>
+                  </p>
+                  <p>
+                    <label>
+                 <input name="it" type="radio" />
+                 <span>Information Technology and Department</span>
+                </label>
+                  </p>
+                  <p>
+                    <label>
+                 <input name="ee" type="radio"/>
+                 <span>Electronics Engineering and Department</span>
+               </label>
+                  </p>
+                  <p>
+                    <label>
+                 <input name="mech" type="radio"/>
+                 <span>Mechanical Engineering and Department</span>
+                </label>
+                  </p>
+                </div>
+              </div>
+            </form>
+            <!---------------------->
+            <form action="#">
+              <div class="file-field input-field">
+                <div class="btn">
+                  <span>File</span>
+                  <input type="file">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                </div>
+              </div>
+            </form>
+            <!------------------------->
+            <form action='#'>
+              <div class="row">
+                <div class="col s12">
+                  <p>
+                    <label>
+            <input class="with-gap" name="choose" type="radio" checked />
+            <span>Only .pdf, .docx, .docs, .txt, .odt, file supported for uploading!</span>
+          </label>
+                  </p>
+                </div>
+              </div>
+            </form>
+            <!----------------------------->
+            <div class="row">
+              <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+          </button>
+              <button class="btn red lighten-1 waves-effect waves-light" type="submit" name="action">Close
+          </button>
+            </div>
+          </form>
+        </div>
+        <footer>
+          <% include ../partials/footer %>
+        </footer>
+
+        <script>
+          $(document).ready(function() {
+            $('.carousel.carousel-slider').carousel({
+              fullWidth: true
+            });
+            $('.button-collapse').sideNav();
+            $('.modal').modal();
+            $('select').formSelect();
+          });
+
+          $(document).ready(function() {
+            $('.carousel.carousel-slider').carousel({
+              fullWidth: true
+            });
+            $('.button-collapse').sideNav();
+            $('.modal').modal();
+          });
+          $(".dropdown-trigger").dropdown();
+        </script>    
+
+</body>
+
+</html>

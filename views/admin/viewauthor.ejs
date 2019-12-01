@@ -1,0 +1,94 @@
+<html>
+
+<head>
+  <% include ../../public/partials/head %>
+</head>
+
+<body>
+<div id="container" style="position:relative; min-height:100%">
+    <%- include('adminnav'); -%>
+    <h2>Active Users</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>
+                <b>Author Name</b>
+            </td>
+            <td>
+                <b>Author Email ID</b>
+            </td>
+            <td colspan="2">
+                <b>Action</b>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(var i=0; i < authors.length; i++) { if(authors[i].local.blockedStatus === '0') { %>
+            <tr>
+                <td>
+                    <%= authors[i].local.name %>
+                </td>
+                <td>
+                    <%= authors[i].local.email %>
+                </td>
+                <td>
+                    <a href=/admin/editauthor/<%= authors[i]._id %>>Edit</a>
+                </td>
+                <td>
+                    <a href=/admin/blockauthor/<%= authors[i]._id %>>Block</a>
+                </td>
+                <td>
+                    <a href=/admin/deleteauthor/<%= authors[i]._id %>>Delete</a>
+                </td>
+            </tr>
+            <% } } %>
+    </tbody>
+</table>
+ <br><br><br>
+
+<h2>Blocked Users</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>
+                <b>Author Name</b>
+            </td>
+            <td>
+                <b>Author Email ID</b>
+            </td>
+            <td colspan="2">
+                <b>Action</b>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(var i=0; i < authors.length; i++) { if(authors[i].local.blockedStatus === '1') { %>
+            <tr>
+                <td>
+                    <%= authors[i].local.name %>
+                </td>
+                <td>
+                    <%= authors[i].local.email %>
+                </td>
+                <td>
+                    <a href=/admin/editauthor/<%= authors[i]._id %>>Edit</a>
+                </td>
+                <td>
+                    <a href=/admin/unblockauthor/<%= authors[i]._id %>>Unblock</a>
+                </td>
+                <td>
+                    <a href=/admin/deleteauthor/<%= authors[i]._id %>>Delete</a>
+                </td>
+            </tr>
+            <% } } %>
+    </tbody>
+</table>
+
+<footer>
+    <% include ../../public/partials/footer %>
+</footer>
+</div>
+
+</body>
+
+</html>
